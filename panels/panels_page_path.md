@@ -7,7 +7,7 @@
  * @param string $page_id
  *   The panel page id.
  */
-function MY_MODULE_get_panel_page_path($page_id) {
+function MY_MODULE_get_panels_page_path($page_id) {
   $path = '';
 
   ctools_include('export');

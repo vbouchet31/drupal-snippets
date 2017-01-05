@@ -6,7 +6,7 @@
  *
  * See page_manager_enable_page() in page_manager.admin.inc.
  */
-function MY_MODULE_panel_page_status($page_id, $status = TRUE) {
+function MY_MODULE_set_panels_page_status($page_id, $status = TRUE) {
   $page = page_manager_cache_load('page-' . $page_id);
   if (!empty($page) && $function = ctools_plugin_get_function($page->subtask, 'enable callback')) {
     $function($page, !$status);
@@ -17,5 +17,5 @@ function MY_MODULE_panel_page_status($page_id, $status = TRUE) {
 
 ### Example
 ```php
-MY_MODULE_panel_page_status('my_page', TRUE); // Enable the panel page.
+MY_MODULE_set_panels_page_status('my_page', TRUE); // Enable the panel page.
 ```
