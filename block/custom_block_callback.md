@@ -11,12 +11,12 @@ It requires each module to implement a custom hook_block_view(). Only the hook_b
 /**
  * Implements hook_block_info().
  */
-function my_module_block_info() {
+function MY_MODULE_block_info() {
   $blocks = array();
 
   $blocks['my_block'] = array(
     'info' => t('My block'),
-    'callback' => 'my_module_my_block_view',
+    'callback' => 'MY_MODULE_my_block_view',
     'file' => 'my_module.block.inc',
   );
 
@@ -26,7 +26,7 @@ function my_module_block_info() {
 /**
  * Implements hook_block_view().
  */
-function my_module_block_view($delta) {
+function MY_MODULE_block_view($delta) {
   $block = array();
 
   $definitions = my_module_block_info();
@@ -51,7 +51,7 @@ Generic custom module
 /**
  * Implements hook_block_view_alter().
  */
-function my_module_block_view_alter(&$data, $block) {
+function MY_SECOND_MODULE_block_view_alter(&$data, $block) {
   // If the block is empty, that means the module providing the module has not
   // implemented the hook_block_view().
   if (empty($data)) {
@@ -76,7 +76,7 @@ Custom module defining blocks
 /**
  * Implements hook_block_info().
  */
-function my_module_block_info() {
+function MY_MODULE_block_info() {
   $blocks = array();
 
   $blocks['my_block'] = array(
