@@ -1,6 +1,6 @@
 ### Ease the use of block view callback.
 
-Read this ticket for the full story and core patch tentative: https://www.drupal.org/node/2651996
+Read this ticket for the full story and core patch attempt: https://www.drupal.org/node/2651996
 
 The 2 variants are similar on how to use it. Each block can define a custom callback and file to store the callback.
 
@@ -29,7 +29,7 @@ function MY_MODULE_block_info() {
 function MY_MODULE_block_view($delta) {
   $block = array();
 
-  $definitions = my_module_block_info();
+  $definitions = MY_MODULE_block_info();
 
   if (isset($definitions[$delta]['callback'])) {
     if (isset($definitions[$delta]['file'])) {
